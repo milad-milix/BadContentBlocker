@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Bad Content Blocker",
+  "description": "I don't allow them to be shown",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "tabs",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["popup.js"],
+    "run_at": "document_start"
+  }
+]
+}
